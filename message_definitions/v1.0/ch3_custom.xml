@@ -1,0 +1,16 @@
+<?xml version='1.0'?>
+<!-- Custom Mavlink Message Definition File created by zahana for challenge 3 -->
+<!-- Used to implement a custom message for inter-drone communication to avooid collision at drop zone -->
+<mavlink>
+     <include>common.xml</include>
+     <messages>
+          <message id="200" name="STATE_MACHINE_STATUS">
+              <description>Drone's current state in challenge 3 mission and its global position.</description>
+              <field type="uint64_t" name="timestamp"> Timestamp</field>
+              <field type="uint8_t" name="drone_id"> Drone ID</field>
+              <field type="uint8_t" name="state"> Drone state machine's state. 0:start, 1:Takeoff, 2:objectSearch, 3:Picking, 4:GoToDrop, 5:WaitToDrop, 6:Drop, 7:Hover</field>
+              <field type="double" name="latitude"> Drone latitude</field>
+              <field type="double" name="longitude"> Drone longitude</field>
+         </message>
+    </messages>
+</mavlink>
